@@ -12,15 +12,17 @@ loadData('mnistAll');
 
 if 0
   % test on all data- 255 seconds, 3.09% error
-  trainndx = 1:60000; testndx =  1:10000;
+  trainndx = 1:60000; 
+  testndx =  1:10000;
 else
    % train on 10k, test on 1k - 1.39 seconds, 8.00% error
-  % train on 60k, test on 1k - 8 seconds, 3.80% error
+   % train on 60k, test on 1k - 8 seconds, 3.80% error
   trainndx = 1:60000; 
   testndx =  1:10000; 
 end
 
-
+ntrain = length(trainndx);
+ntest = length(testndx);
 setSeed(0);
 
 if 1
